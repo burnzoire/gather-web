@@ -14,11 +14,11 @@ export class ForumService {
   }
 
   getForums(): Observable<Forum[]> {
-    return this.http.get<Forum[]>(this.api.getHost() + '/forum/')
+    return this.http.get<Forum[]>(this.api.getHost() + '/forums/')
   }
 
   getForum(id): Observable<Forum> {
-    return this.http.get<Forum>(this.api.getHost() + '/forum/' + id)
+    return this.http.get<Forum>(this.api.getHost() + '/forums/' + id)
   }
 
 }
