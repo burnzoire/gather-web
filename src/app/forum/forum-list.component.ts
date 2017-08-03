@@ -1,5 +1,8 @@
+import 'rxjs/add/operator/switchMap';
+import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
-import { Inject } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
 import { Forum } from './forum'
 import { ForumService } from './forum.service'
 
@@ -10,18 +13,32 @@ import { ForumService } from './forum.service'
 })
 
 export class ForumListComponent implements OnInit {
-  forums : Forum[];
-  service: ForumService;
-  id: number = 1;
+  forums : Observable<Forum[]>;
 
-  constructor(@Inject(ForumService) service) {
-    this.service = service;
-  }
+  private selectedId: number;
+
+  constructor(
+    private service: ForumService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit() {
-    this.service.getForums().subscribe(
-      (forums) => this.forums = forums
-    )
+    this.forums = this.route.paramMap
+      .switchMap((params: ParamMap) => {
+        // (+) before `params.get()` turns the string into a number
+        this.selectedId = +params.get('id');
+        return this.service.getForums();
+      });
   }
+
+  onSelect(forum: Forum) {
+    this.router.navigate(['/forums', forum.id]);
+  }
+
+  isSelected(forum: Forum) {
+    return forum.id === this.selectedId;
+  }
+
 
 }

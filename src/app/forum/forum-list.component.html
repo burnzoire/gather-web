@@ -1,3 +1,7 @@
-<ul *ngFor="let forum of forums">
-  <li>{{forum.name}}</li>
+<ul>
+  <li *ngFor="let forum of forums | async"
+    [class.selected]="isSelected(forum)"
+    (click)="onSelect(forum)">
+    {{ forum.name }}
+  </li>
 </ul>
