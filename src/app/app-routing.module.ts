@@ -5,7 +5,7 @@ import { AppComponent }          from './app.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
-  { path: '',   redirectTo: '/forums', pathMatch: 'full' },
+  { path: '',   redirectTo: '/topics', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 

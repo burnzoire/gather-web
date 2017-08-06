@@ -6,7 +6,7 @@ export class AuthService {
   constructor() { }
 
   getAuthorizationHeader():string {
-    return 'Token token=Myp5abOTJcOiB3S8ah7i4gtt'
+    return 'Token token=WFdgnRQcr0mPxEVlocsj4Att'
   }
 
 }

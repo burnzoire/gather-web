@@ -1,0 +1,4 @@
+<ul>
+  <li *ngFor="let forum of forums"
+      (click)="navigateToForumTopics(forum)" >{{ forum.name }} </li>
+</ul>
