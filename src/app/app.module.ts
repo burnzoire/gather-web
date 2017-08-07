@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
+import 'hammerjs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdSidenavModule, MdListModule } from '@angular/material';
 
 import { Router } from '@angular/router';
 
@@ -17,11 +20,14 @@ import { AuthInterceptor } from './core/auth.interceptor';
 import { TopicNavComponent } from './topic/topic-nav.component';
 import { TopicListComponent } from './topic/topic-list.component';
 
+
 @NgModule({
   imports: [
     BrowserModule,
     HttpClientModule,
     TopicModule,
+    MdListModule,
+    BrowserAnimationsModule,
     AppRoutingModule
   ],
   declarations: [

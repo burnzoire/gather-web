@@ -1,4 +1,4 @@
-<ul>
-  <li *ngFor="let forum of forums"
-      (click)="navigateToForumTopics(forum)" >{{ forum.name }} </li>
-</ul>
+<md-nav-list>
+   <a md-list-item *ngFor="let forum of forums"
+   (click)="navigateToForumTopics(forum)"> {{ forum.name }} </a>
+</md-nav-list>
