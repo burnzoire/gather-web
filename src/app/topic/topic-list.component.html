@@ -1,3 +1,9 @@
-<ul>
-  <li *ngFor="let topic of topics"> {{ topic.title }} </li>
-</ul>
+<md-nav-list class="topic-list">
+  <md-list-item *ngFor="let topic of topics" class="topic-list-item">
+    <h3 md-line> {{topic.title}} </h3>
+    <p md-line>
+      <span> User{{topic.id}} </span>
+      <span> -- 3 replies </span>
+    </p>
+  </md-list-item>
+</md-nav-list>

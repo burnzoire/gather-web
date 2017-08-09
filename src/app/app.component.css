@@ -13,5 +13,6 @@ html, body {
 }
 
 .side-nav-content {
+  width: 100%;
   display: flex;
 }
