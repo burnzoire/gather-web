@@ -27,6 +27,7 @@ import { TopicListComponent } from './topic/topic-list.component';
     HttpClientModule,
     TopicModule,
     MdListModule,
+    MdSidenavModule,
     BrowserAnimationsModule,
     AppRoutingModule
   ],
