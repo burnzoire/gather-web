@@ -26,7 +26,6 @@ export class TopicNavComponent implements OnInit {
   }
 
   navigateToForumTopics(forum) {
-    console.log('/forums/' + forum.id + '/topics');
     this.router.navigate(['/forums', forum.id, 'topics']);
   }
 
